@@ -7,4 +7,17 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-top: none;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.Wrap button{
+  margin: 5px auto;
+  width: 80px;
+  font-size: 12px;
+}
+.Wrap button:nth-child(2){
+  margin-left:5px;
+  margin-right: 5px;
 }
