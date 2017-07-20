@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 
+import Wrap from './Wrap';
+
 import Wrapper from './Wrapper';
 
 class App extends Component {
@@ -8,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Wrapper />
-        
+        <Wrap />
       </div>
     );
   }

@@ -1,0 +1,10 @@
+.Wrap{
+  background-color: rgb(68,74,95);
+  height: 50px;
+  float: none;
+  margin: 0 auto;
+  box-shadow: 2px 2px 0px 2px #000;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: none;
+}
