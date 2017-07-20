@@ -5,6 +5,5 @@
   margin: 0 auto;
   box-shadow: 2px 2px 2px 2px #000;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
+  padding-top: 5px;
 }

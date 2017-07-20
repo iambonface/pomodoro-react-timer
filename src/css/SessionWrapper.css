@@ -1,0 +1,15 @@
+.SessionWrapper{
+  /*border: 2px solid red;
+  background: green;*/
+  margin: 0 auto;
+  height: 120px;
+  bottom: 10px;
+  position: absolute;
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+
+h4{
+  color: rgb(239,224,172);
+}

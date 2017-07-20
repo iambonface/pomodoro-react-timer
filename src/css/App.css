@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+
 .App{
   background-color: rgb(172,187,239);
   height: 100vh;
   width: auto;
   padding-top: 40px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.h4{
+  color: rgb(239,224,172);
 }
