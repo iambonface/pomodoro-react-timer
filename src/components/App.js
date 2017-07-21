@@ -24,9 +24,12 @@ class App extends Component {
   }
 
   handleSessionDecrement(){
-    this.setState((prevState, props)=>{
-      return { minutes: prevState.minutes - 1}
-    })
+    if(this.state.minutes > 0){
+      this.setState((prevState, props)=>{
+        return { minutes: prevState.minutes - 1}
+      })
+    }
+
   }
 
   render() {
