@@ -15,6 +15,8 @@ class App extends Component {
     }
     this.handleSessionIncrement = this.handleSessionIncrement.bind(this);
     this.handleSessionDecrement = this.handleSessionDecrement.bind(this);
+    this.handleBreakIncrement = this.handleBreakIncrement.bind(this);
+    this.handleBreakDecrement = this.handleBreakDecrement.bind(this);
   }
 
   handleSessionIncrement(){
@@ -29,7 +31,20 @@ class App extends Component {
         return { minutes: prevState.minutes - 1}
       })
     }
+  }
 
+  handleBreakIncrement(){
+    this.setState((prevState, props)=>{
+      return { breakMinutes: prevState.breakMinutes + 1}
+    })
+  }
+
+  handleBreakDecrement(){
+    if(this.state.breakMinutes > 0){
+      this.setState((prevState, props)=>{
+        return { breakMinutes: prevState.breakMinutes - 1}
+      })
+    }
   }
 
   render() {
@@ -39,6 +54,8 @@ class App extends Component {
                  breakMinutes={this.state.breakMinutes}
                  handleSessionIncrement={this.handleSessionIncrement}
                  handleSessionDecrement={this.handleSessionDecrement}
+                 handleBreakIncrement={this.handleBreakIncrement}
+                 handleBreakDecrement={this.handleBreakDecrement}
                  />
         <Wrap />
       </div>

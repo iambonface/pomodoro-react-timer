@@ -15,6 +15,8 @@ class Wrapper extends Component{
                         breakMinutes={this.props.breakMinutes}
                         handleSessionIncrement={this.props.handleSessionIncrement}
                         handleSessionDecrement={this.props.handleSessionDecrement}
+                        handleBreakDecrement={this.props.handleBreakDecrement}
+                        handleBreakIncrement={this.props.handleBreakIncrement}
                         />
       </div>
     )
