@@ -11,14 +11,19 @@ class App extends Component {
     super(props);
     this.state={
       minutes: 25,
-      breakMinutes: 5
+      breakMinutes: 5,
+      sessionClickIncrement: false
     }
     this.handleSessionIncrement = this.handleSessionIncrement.bind(this);
     this.handleSessionDecrement = this.handleSessionDecrement.bind(this);
   }
 
   handleSessionIncrement(){
-    alert("increment")
+    this.setState({
+      sessionClickIncrement: true,
+    })
+
+
   }
 
   handleSessionDecrement(){
@@ -31,7 +36,8 @@ class App extends Component {
         <Wrapper minutes={this.state.minutes}
                  breakMinutes={this.state.breakMinutes}
                  handleSessionIncrement={this.handleSessionIncrement}
-                 handleSessionDecrement={this.handleSessionDecrement}/>
+                 handleSessionDecrement={this.handleSessionDecrement}
+                 sessionClickIncrement={this.state.sessionClickIncrement}/>
         <Wrap />
       </div>
     );

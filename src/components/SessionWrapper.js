@@ -10,7 +10,9 @@ class SessionWrapper extends Component{
       <div className="SessionWrapper col-md-12">
         <Session minutes={this.props.minutes}
                  handleSessionIncrement={this.props.handleSessionIncrement}
-                 handleSessionDecrement={this.props.handleSessionDecrement}/>
+                 handleSessionDecrement={this.props.handleSessionDecrement}
+                 sessionClickIncrement={this.props.sessionClickIncrement}/>
+                 
         <Break breakMinutes={this.props.breakMinutes}/>
       </div>
     )
