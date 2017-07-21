@@ -12,22 +12,21 @@ class App extends Component {
     this.state={
       minutes: 25,
       breakMinutes: 5,
-      sessionClickIncrement: false
     }
     this.handleSessionIncrement = this.handleSessionIncrement.bind(this);
     this.handleSessionDecrement = this.handleSessionDecrement.bind(this);
   }
 
   handleSessionIncrement(){
-    this.setState({
-      sessionClickIncrement: true,
+    this.setState((prevState, props)=>{
+      return { minutes: prevState.minutes + 1}
     })
-
-
   }
 
   handleSessionDecrement(){
-    alert("decrement")
+    this.setState((prevState, props)=>{
+      return { minutes: prevState.minutes - 1}
+    })
   }
 
   render() {
@@ -37,7 +36,7 @@ class App extends Component {
                  breakMinutes={this.state.breakMinutes}
                  handleSessionIncrement={this.handleSessionIncrement}
                  handleSessionDecrement={this.handleSessionDecrement}
-                 sessionClickIncrement={this.state.sessionClickIncrement}/>
+                 />
         <Wrap />
       </div>
     );

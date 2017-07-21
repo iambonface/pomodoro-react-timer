@@ -10,13 +10,12 @@ class Wrapper extends Component{
     return(
       <div className="Wrapper col-md-3 col-sm-5 col-xs-10">
         <Title />
-        <Display minutes={this.props.minutes}
-                sessionClickIncrement={this.props.sessionClickIncrement}/>
+        <Display minutes={this.props.minutes}/>
         <SessionWrapper minutes={this.props.minutes}
                         breakMinutes={this.props.breakMinutes}
                         handleSessionIncrement={this.props.handleSessionIncrement}
                         handleSessionDecrement={this.props.handleSessionDecrement}
-                        sessionClickIncrement={this.props.sessionClickIncrement}/>
+                        />
       </div>
     )
   }
