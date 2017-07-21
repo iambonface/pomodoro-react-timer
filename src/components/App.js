@@ -10,13 +10,15 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      minutes: 25
+      minutes: 25,
+      breakMinutes: 5
     }
   }
   render() {
     return (
       <div className="App">
-        <Wrapper minutes={this.state.minutes} />
+        <Wrapper minutes={this.state.minutes}
+                 breakMinutes={this.state.breakMinutes}/>
         <Wrap />
       </div>
     );

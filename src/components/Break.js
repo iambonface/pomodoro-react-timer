@@ -9,7 +9,7 @@ class Break extends Component{
       <h4 className="text-center">Break</h4>
         <div className=" count text-center">
           <button className="btn-min">-</button>
-          <button className="btn-min min">5</button>
+          <button className="btn-min min">{this.props.breakMinutes}</button>
           <button className="btn-min">+</button>
         </div>
 

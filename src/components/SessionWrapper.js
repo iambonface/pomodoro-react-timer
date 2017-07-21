@@ -8,8 +8,8 @@ class SessionWrapper extends Component{
   render(){
     return(
       <div className="SessionWrapper col-md-12">
-        <Session minutes={this.props.minutes} />
-        <Break />
+        <Session minutes={this.props.minutes}/>
+        <Break breakMinutes={this.props.breakMinutes}/>
       </div>
     )
   }
