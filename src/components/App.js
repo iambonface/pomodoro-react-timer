@@ -14,10 +14,15 @@ class App extends Component {
       breakMinutes: 5
     }
     this.handleSessionIncrement = this.handleSessionIncrement.bind(this);
+    this.handleSessionDecrement = this.handleSessionDecrement.bind(this);
   }
 
   handleSessionIncrement(){
     alert("increment")
+  }
+
+  handleSessionDecrement(){
+    alert("decrement")
   }
 
   render() {
@@ -25,7 +30,8 @@ class App extends Component {
       <div className="App">
         <Wrapper minutes={this.state.minutes}
                  breakMinutes={this.state.breakMinutes}
-                 handleSessionIncrement={this.handleSessionIncrement}/>
+                 handleSessionIncrement={this.handleSessionIncrement}
+                 handleSessionDecrement={this.handleSessionDecrement}/>
         <Wrap />
       </div>
     );
