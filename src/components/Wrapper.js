@@ -12,7 +12,8 @@ class Wrapper extends Component{
         <Title />
         <Display minutes={this.props.minutes} />
         <SessionWrapper minutes={this.props.minutes}
-                        breakMinutes={this.props.breakMinutes}/>
+                        breakMinutes={this.props.breakMinutes}
+                        handleSessionIncrement={this.props.handleSessionIncrement}/>
       </div>
     )
   }

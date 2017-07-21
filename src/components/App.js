@@ -13,12 +13,19 @@ class App extends Component {
       minutes: 25,
       breakMinutes: 5
     }
+    this.handleSessionIncrement = this.handleSessionIncrement.bind(this);
   }
+
+  handleSessionIncrement(){
+    alert("increment")
+  }
+
   render() {
     return (
       <div className="App">
         <Wrapper minutes={this.state.minutes}
-                 breakMinutes={this.state.breakMinutes}/>
+                 breakMinutes={this.state.breakMinutes}
+                 handleSessionIncrement={this.handleSessionIncrement}/>
         <Wrap />
       </div>
     );

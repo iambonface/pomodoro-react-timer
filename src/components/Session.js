@@ -10,7 +10,7 @@ class Session extends Component{
           <div className=" count text-center">
             <button className="btn-min">-</button>
             <button className="btn-min min">{this.props.minutes}</button>
-            <button className="btn-min">+</button>
+            <button className="btn-min" onClick={this.props.handleSessionIncrement}>+</button>
           </div>
 
       </div>
