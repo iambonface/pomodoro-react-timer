@@ -8,6 +8,17 @@
   font-family: 'Share Tech Mono', monospace;
 }
 
-.h4{
+.btn-min{
+  background-color: rgb(8,79,95);
+  border: none;
+  cursor: pointer;
+}
+.min{
+  cursor: crosshair;
+  color: rgb(255,255,255);
+}
+.count {
+  font-size: 20px;
+  font-weight: bold;
   color: rgb(239,224,172);
 }
