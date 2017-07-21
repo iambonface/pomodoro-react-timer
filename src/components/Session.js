@@ -9,7 +9,7 @@ class Session extends Component{
         <h4 className="text-center">Session</h4>
           <div className=" count text-center">
             <button className="btn-min">-</button>
-            <button className="btn-min min">25</button>
+            <button className="btn-min min">{this.props.minutes}</button>
             <button className="btn-min">+</button>
           </div>
 

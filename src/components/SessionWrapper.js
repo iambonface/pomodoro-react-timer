@@ -8,7 +8,7 @@ class SessionWrapper extends Component{
   render(){
     return(
       <div className="SessionWrapper col-md-12">
-        <Session />
+        <Session minutes={this.props.minutes} />
         <Break />
       </div>
     )
