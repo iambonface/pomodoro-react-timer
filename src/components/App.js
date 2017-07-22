@@ -10,14 +10,30 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
+      hours: 0,
+      seconds: 0,
       minutes: 25,
       breakMinutes: 5,
+      totalSeconds:0
     }
     this.handleSessionIncrement = this.handleSessionIncrement.bind(this);
     this.handleSessionDecrement = this.handleSessionDecrement.bind(this);
     this.handleBreakIncrement = this.handleBreakIncrement.bind(this);
     this.handleBreakDecrement = this.handleBreakDecrement.bind(this);
+    this.handleCountdown = this.handleCountdown.bind(this);
   }
+
+  componentDidMount(){
+    this.handleCountdown()
+  }
+   handleCountdown(){
+     let val = this.state.minutes;
+     this.setState({
+       totalSeconds: val * 60
+     })
+
+     console.log(this.state.totalSeconds)
+   }
 
   handleSessionIncrement(){
     this.setState((prevState, props)=>{
@@ -57,7 +73,7 @@ class App extends Component {
                  handleBreakIncrement={this.handleBreakIncrement}
                  handleBreakDecrement={this.handleBreakDecrement}
                  />
-        <Wrap />
+        <Wrap handleCountdown={this.handleCountdown} />
       </div>
     );
   }
