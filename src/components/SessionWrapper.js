@@ -8,8 +8,10 @@ class SessionWrapper extends Component{
   render(){
     return(
       <div className="SessionWrapper col-md-12">
-        <Session setMoment={this.props.setMoment}
+        <Session setSession={this.props.setSession}
+                 start={this.props.start}
                  clickIncreaseSession={this.props.clickIncreaseSession}
+                 clickDecreaseSession={this.props.clickDecreaseSession}
 
                 />
 

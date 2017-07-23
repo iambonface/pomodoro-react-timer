@@ -13,14 +13,14 @@ class Wrapper extends Component{
         <Display hours={this.props.hours}
                  minutes={this.props.minutes}
                  seconds={this.props.seconds}
-                 setMoment={this.props.setMoment}
-                 showTimer={this.props.showTimer}/>
+                 setSession={this.props.setSession}
+                 start={this.props.start}
+                />
 
-        <SessionWrapper setMoment={this.props.setMoment}
+        <SessionWrapper setSession={this.props.setSession}
+                        start={this.props.start}
                         clickIncreaseSession={this.props.clickIncreaseSession}
-                        breakMinutes={this.props.breakMinutes}
-
-                        />
+                        clickDecreaseSession={this.props.clickDecreaseSession}/>
       </div>
     )
   }
