@@ -22,10 +22,11 @@ class App extends Component {
   }
 
   handleTimer(){
-    console.log(this.state.showTimer)
     this.setState({
       showTimer: !this.state.showTimer
     })
+
+    this.splitTimeUnits()
   }
 
   clickIncreaseSession(){
@@ -45,18 +46,18 @@ class App extends Component {
   }*/
 
   splitTimeUnits(){
-    let hours = Math.floor(this.numOfSeconds/60/60);
-    let minutes = Math.floor(hours % 60);
-    let seconds = Math.floor(this.numOfSeconds % 60)
+    let totalSeconds = this.state.setMoment * 60
 
-    console.log(hours)
+    let hours = Math.floor(totalSeconds/60/60);
+    let minutes = Math.floor(totalSeconds/60 % 60);
+    let seconds = Math.floor(totalSeconds % 60)
 
     this.setState({
       hours: hours,
       minutes: minutes,
       seconds: seconds
     })
-    console.log(this.state.hours + ":" + this.state.minutes + ":" + this.state.seconds)
+    console.log("sec " +  this.state.seconds)
   }
 
   render() {
