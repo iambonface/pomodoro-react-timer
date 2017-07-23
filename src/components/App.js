@@ -12,68 +12,67 @@ class App extends Component {
     this.state={
       hours: 0,
       seconds: 0,
-      minutes: 25,
+      minutes: 0,
+      setMoment: 25,
       breakMinutes: 5,
-      totalSeconds:0
+      showTimer: false
     }
-    this.handleSessionIncrement = this.handleSessionIncrement.bind(this);
-    this.handleSessionDecrement = this.handleSessionDecrement.bind(this);
-    this.handleBreakIncrement = this.handleBreakIncrement.bind(this);
-    this.handleBreakDecrement = this.handleBreakDecrement.bind(this);
-    this.handleCountdown = this.handleCountdown.bind(this);
+    this.handleTimer = this.handleTimer.bind(this);
+    this.clickIncreaseSession = this.clickIncreaseSession.bind(this)
   }
 
-  componentDidMount(){
-    this.handleCountdown()
-  }
-   handleCountdown(){
-     let val = this.state.minutes;
-     this.setState({
-       totalSeconds: val * 60
-     })
-
-     console.log(this.state.totalSeconds)
-   }
-
-  handleSessionIncrement(){
-    this.setState((prevState, props)=>{
-      return { minutes: prevState.minutes + 1}
+  handleTimer(){
+    console.log(this.state.showTimer)
+    this.setState({
+      showTimer: !this.state.showTimer
     })
   }
 
-  handleSessionDecrement(){
-    if(this.state.minutes > 0){
-      this.setState((prevState, props)=>{
-        return { minutes: prevState.minutes - 1}
-      })
-    }
-  }
-
-  handleBreakIncrement(){
+  clickIncreaseSession(){
     this.setState((prevState, props)=>{
-      return { breakMinutes: prevState.breakMinutes + 1}
+      return{ setMoment: prevState.setMoment + 1}
     })
   }
 
-  handleBreakDecrement(){
-    if(this.state.breakMinutes > 0){
-      this.setState((prevState, props)=>{
-        return { breakMinutes: prevState.breakMinutes - 1}
-      })
-    }
+  /* handleCountdown(){
+     let _this = this
+     _this.numOfSeconds = 0
+
+     _this.numOfSeconds = this.state.minutes * 60
+
+     console.log(this.numOfSeconds)
+     this.splitTimeUnits()
+  }*/
+
+  splitTimeUnits(){
+    let hours = Math.floor(this.numOfSeconds/60/60);
+    let minutes = Math.floor(hours % 60);
+    let seconds = Math.floor(this.numOfSeconds % 60)
+
+    console.log(hours)
+
+    this.setState({
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds
+    })
+    console.log(this.state.hours + ":" + this.state.minutes + ":" + this.state.seconds)
   }
 
   render() {
     return (
       <div className="App">
-        <Wrapper minutes={this.state.minutes}
-                 breakMinutes={this.state.breakMinutes}
-                 handleSessionIncrement={this.handleSessionIncrement}
-                 handleSessionDecrement={this.handleSessionDecrement}
-                 handleBreakIncrement={this.handleBreakIncrement}
-                 handleBreakDecrement={this.handleBreakDecrement}
+        <Wrapper
+                 hours={this.state.hours}
+                 minutes={this.state.minutes}
+                 seconds={this.state.seconds}
+                 setMoment={this.state.setMoment}
+                 showTimer={this.state.showTimer}
+                 clickIncreaseSession={this.clickIncreaseSession}
+
                  />
-        <Wrap handleCountdown={this.handleCountdown} />
+        <Wrap handleTimer={this.handleTimer}
+              showTimer={this.state.showTimer}/>
       </div>
     );
   }

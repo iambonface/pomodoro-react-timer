@@ -13,6 +13,9 @@
   border: none;
   cursor: pointer;
 }
+i{
+  cursor: pointer;
+}
 .min{
   cursor: crosshair;
   color: rgb(255,255,255);

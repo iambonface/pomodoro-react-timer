@@ -9,12 +9,12 @@ class Session extends Component{
         <h4 className="text-center">Session</h4>
           <div className=" count text-center">
             <button className="btn-min"
-                    onClick={this.props.handleSessionDecrement}>-</button>
+                    onClick={this.props.clickDecreaseSession}>-</button>
 
-            <button className="btn-min min">{this.props.minutes}</button>
+            <button className="btn-min min">{this.props.setMoment}</button>
 
             <button className="btn-min"
-                    onClick={this.props.handleSessionIncrement}>+</button>
+                    onClick={this.props.clickIncreaseSession}>+</button>
           </div>
 
       </div>
