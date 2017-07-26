@@ -15,10 +15,12 @@ class Wrapper extends Component{
                  seconds={this.props.seconds}
                  setSession={this.props.setSession}
                  start={this.props.start}
+                 running={this.props.running}
                 />
 
         <SessionWrapper setSession={this.props.setSession}
                         start={this.props.start}
+                        running={this.props.running}
                         clickIncreaseSession={this.props.clickIncreaseSession}
                         clickDecreaseSession={this.props.clickDecreaseSession}/>
       </div>

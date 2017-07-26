@@ -17,23 +17,31 @@ class App extends Component {
       minutes: 0,
       setSession: 25,
       start:false,
-      finish: false,
-      totalSeconds: 0
+      running: false,
+      timer: 0,
+      isSession:null
     }
 
     this.clickIncreaseSession = this.clickIncreaseSession.bind(this);
     this.clickDecreaseSession = this.clickDecreaseSession.bind(this);
     this.startTimer = this.startTimer.bind(this);
-    this.evalTime = this.evalTime.bind(this);
+    this.pauseTimer = this.pauseTimer.bind(this)
+    this.evalTime = this.evalTime.bind(this)
   }
 
   clickIncreaseSession(){
+    this.setState({
+      isSession:true
+    })
     this.setState((prevState, props)=>{
       return { setSession: prevState.setSession + 1}
     })
   }
 
   clickDecreaseSession(){
+    this.setState({
+      isSession:true
+    })
     if(this.state.setSession > 0){
       this.setState((prevState, props)=>{
         return { setSession: prevState.setSession - 1}
@@ -41,11 +49,36 @@ class App extends Component {
     }
   }
 
+  componentDidMount(){
+
+  }
+
   startTimer(){
+    console.log(this.state.isSession)
+    this.setState({
+        start: !this.state.start,
+        timer: this.state.setSession * 60
+    })
+
+   this.intervalId = setInterval(() => {
+     this.evalTime()
+       if(this.state.timer > 0){
+         this.setState((prevState, props)=>{
+         return {
+           timer: prevState.timer - 1}
+         })
+       }
+       if(this.state.timer === 0){
+         this.break()
+       }
+
+    }, 1000)
+  }
+  pauseTimer(){
     this.setState({
       start: !this.state.start
     })
-    this.evalTime();
+    clearInterval(this.intervalId)
   }
 
   prefixZero(val){
@@ -56,9 +89,10 @@ class App extends Component {
   }
 
   evalTime(){
-    let hours = this.prefixZero(Math.floor((this.state.setSession * 60)/60/60));
-    let minutes = this.prefixZero(Math.floor((this.state.setSession * 60)/60 % 60));
-    let seconds = this.prefixZero( Math.floor((this.state.setSession * 60) % 60));
+    let hours = this.prefixZero(Math.floor(this.state.timer/60/60));
+    let minutes = this.prefixZero(Math.floor(this.state.timer/60 % 60));
+    let seconds = this.prefixZero(this.state.timer % 60);
+
     this.setState({
       hours:hours,
       minutes: minutes,
@@ -66,6 +100,12 @@ class App extends Component {
     })
   }
 
+
+
+
+    getBreak(){
+      console.log("breaking..")
+    }
 
   render() {
     return (
@@ -75,13 +115,18 @@ class App extends Component {
                  seconds={this.state.seconds}
                  setSession={this.state.setSession}
                  startTimer={this.startTimer}
+                 running={this.state.running}
+
+                 pauseTimer={this.pauseTimer}
                  start={this.state.start}
                  clickIncreaseSession={this.clickIncreaseSession}
                  clickDecreaseSession={this.clickDecreaseSession}
                                                   />
         <Wrap
               start={this.state.start}
-              startTimer={this.startTimer}/>
+              running={this.state.running}
+              startTimer={this.startTimer}
+              pauseTimer = {this.pauseTimer}/>
       </div>
     );
   }
