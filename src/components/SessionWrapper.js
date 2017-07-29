@@ -16,7 +16,13 @@ class SessionWrapper extends Component{
 
                 />
 
-        <Break breakMinutes={this.props.breakMinutes}
+        <Break setBreak={this.props.setBreak}
+               clickIncreaseBreak={this.props.clickIncreaseBreak}
+               clickDecreaseBreak={this.props.clickDecreaseBreak}
+               isSession={this.props.isSession}
+               start={this.props.start}
+               isBreak={this.props.isBreak}
+
               />
       </div>
     )

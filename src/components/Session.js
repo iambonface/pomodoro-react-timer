@@ -9,12 +9,17 @@ class Session extends Component{
 
     let buttonDecrement = null;
     let buttonIncrement = null;
+    let buttonSession = null;
 
     if(!start){
       buttonDecrement = <button className="btn-min"
               onClick={this.props.clickDecreaseSession}>-</button>
       buttonIncrement = <button className="btn-min"
               onClick={this.props.clickIncreaseSession}>+</button>
+
+      buttonSession = <button className="btn-min min">{this.props.setSession}</button>
+    } else if(start || this.props.isRunning === false){
+      buttonSession = <button className="btn-min btn-colored min">{this.props.setSession}</button>
     }
 
 
@@ -23,7 +28,7 @@ class Session extends Component{
         <h4 className="text-center">Session</h4>
           <div className=" count text-center">
             {buttonDecrement}
-            <button className="btn-min min">{this.props.setSession}</button>
+            {buttonSession}
             {buttonIncrement}
           </div>
 

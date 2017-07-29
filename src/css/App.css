@@ -13,6 +13,13 @@
   border: none;
   cursor: pointer;
 }
+.btn-colored{
+  background: green;
+}
+.btn-colored-break{
+  background: orange;
+}
+
 i{
   cursor: pointer;
 }

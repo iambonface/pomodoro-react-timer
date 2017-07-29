@@ -6,7 +6,7 @@ class Title extends Component{
   render(){
     return(
       <div className="Title text-center">
-        <h2>Pomodoro Timer</h2>
+        <h2>React Pomodoro Timer</h2>
       </div>
     )
   }

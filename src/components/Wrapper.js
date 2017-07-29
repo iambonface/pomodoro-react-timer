@@ -16,13 +16,21 @@ class Wrapper extends Component{
                  setSession={this.props.setSession}
                  start={this.props.start}
                  running={this.props.running}
+                 isBreak={this.props.isBreak}
                 />
 
         <SessionWrapper setSession={this.props.setSession}
                         start={this.props.start}
                         running={this.props.running}
                         clickIncreaseSession={this.props.clickIncreaseSession}
-                        clickDecreaseSession={this.props.clickDecreaseSession}/>
+                        clickDecreaseSession={this.props.clickDecreaseSession}
+                        clickIncreaseBreak={this.props.clickIncreaseBreak}
+                        clickDecreaseBreak={this.props.clickDecreaseBreak}
+                        setBreak={this.props.setBreak}
+                        isSession={this.props.isSession}
+                        isBreak = {this.props.isBreak}
+
+/>
       </div>
     )
   }
