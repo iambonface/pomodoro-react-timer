@@ -35,4 +35,4 @@
 <a href="http://pomodoro254.herokuapp.com">Click here to view the Pomodoro React Timer</a>
 
 ## Credits
-The Small Crowd Applause use as alarm was recorded by Yannick Lemieux  via <a href="http://soundbible.com/1964-Small-Crowd-Applause.html">Sound Bible</a>
+The Small Crowd Applause used as alarm was recorded by Yannick Lemieux  via <a href="http://soundbible.com/1964-Small-Crowd-Applause.html">Sound Bible</a>
