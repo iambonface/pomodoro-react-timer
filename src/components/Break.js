@@ -23,7 +23,7 @@ class Break extends Component{
 
 
     return(
-      <div className="Session col-md-6 col-sm-6 col-xs-6">
+      <div className="Break col-md-6 col-sm-6 col-xs-6">
         <h4 className="text-center">Break</h4>
           <div className=" count text-center">
             {buttonDecrement}

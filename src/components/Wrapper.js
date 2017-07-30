@@ -28,9 +28,8 @@ class Wrapper extends Component{
                         clickDecreaseBreak={this.props.clickDecreaseBreak}
                         setBreak={this.props.setBreak}
                         isSession={this.props.isSession}
-                        isBreak = {this.props.isBreak}
+                        isBreak = {this.props.isBreak}/>
 
-/>
       </div>
     )
   }

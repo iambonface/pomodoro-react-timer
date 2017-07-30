@@ -5,6 +5,9 @@ import Wrap from './Wrap';
 
 import Wrapper from './Wrapper';
 
+import Footer from './Footer';
+
+
 
 class App extends Component {
   constructor(props){
@@ -233,6 +236,7 @@ class App extends Component {
               isBreak={this.state.isBreak}
               refresh={this.refresh}
               />
+        <Footer />
       </div>
     );
   }

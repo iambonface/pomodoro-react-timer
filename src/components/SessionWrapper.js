@@ -13,7 +13,6 @@ class SessionWrapper extends Component{
                  running={this.props.running}
                  clickIncreaseSession={this.props.clickIncreaseSession}
                  clickDecreaseSession={this.props.clickDecreaseSession}
-
                 />
 
         <Break setBreak={this.props.setBreak}
