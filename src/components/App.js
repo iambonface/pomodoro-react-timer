@@ -60,7 +60,7 @@ class App extends Component {
     })
     this.audio =  new Audio(this.state.startWork)
     this.audio.load()
-    this.audio.volume = 0.6
+    this.audio.volume = 0.8
     this.audio.play()
   }
 
@@ -105,7 +105,7 @@ class App extends Component {
     }*/
     this.startWork = new Audio(this.state.startWork)
     this.startWork.load()
-    this.startWork.volume = 0.6
+    this.startWork.volume = 0.8
     this.startWork.play()
 
     clearInterval(this.intervalId)
