@@ -11,14 +11,14 @@ class Wrap extends Component{
       buttonClick2 = <button className="btn btn-warning btn-colored-break">On Break</button>
 
     } else{
-      buttonClick1 = <button className="btn btn-success">Working...</button>
+      buttonClick1 = <button className="btn btn-success">Working..</button>
       buttonClick2 = <i className="fa fa-pause-circle" onClick={this.props.pauseTimer}></i>
     }
     return(
       <div className="Wrap col-md-2 col-sm-4 col-xs-8">
         {buttonClick1}
         {buttonClick2}
-        <i className="fa fa-refresh"></i>
+        <i className="fa fa-refresh" onClick={this.props.refresh}></i>
       </div>
     )
   }

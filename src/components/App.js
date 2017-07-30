@@ -38,8 +38,17 @@ class App extends Component {
     this.setStartSession = this.setStartSession.bind(this)
 
     this.playSound = this.playSound.bind(this)
+    this.refresh = this.refresh.bind(this)
 
 
+  }
+
+  refresh(){
+    this.pauseTimer()
+    this.setState({
+      setSession: 25,
+      setBreak: 5
+    })
   }
 
   playSound(){
@@ -48,7 +57,7 @@ class App extends Component {
     })
     this.audio =  new Audio(this.state.startWork)
     this.audio.load()
-    this.audio.volume = 0.4
+    this.audio.volume = 0.6
     this.audio.play()
   }
 
@@ -93,7 +102,7 @@ class App extends Component {
     }*/
     this.startWork = new Audio(this.state.startWork)
     this.startWork.load()
-    this.startWork.volume = 0.4
+    this.startWork.volume = 0.6
     this.startWork.play()
 
     clearInterval(this.intervalId)
@@ -222,6 +231,7 @@ class App extends Component {
               startTimer={this.startTimer}
               pauseTimer = {this.pauseTimer}
               isBreak={this.state.isBreak}
+              refresh={this.refresh}
               />
       </div>
     );

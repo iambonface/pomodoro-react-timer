@@ -22,6 +22,21 @@
   margin-right: 5px;
 }
 
+.Wrap .btn-success{
+  background: green;
+  border: none;
+  transition: all ease 0.8s;
+}
+.Wrap .btn:hover{
+  color: black;
+}
+
+.Wrap .btn-warning{
+  background: orange;
+  border: none;
+  transition: all ease 0.8s;
+}
+
 .Wrap i{
   margin: 5px auto;
   font-size: 40px;
