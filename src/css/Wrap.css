@@ -15,7 +15,7 @@
 .Wrap button{
   margin: 5px auto;
   width: 80px;
-  font-size: 12px;
+  font-size: 13px;
 }
 .Wrap button:nth-child(2){
   margin-left:5px;

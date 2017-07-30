@@ -7,7 +7,6 @@ import Wrapper from './Wrapper';
 
 
 class App extends Component {
-
   constructor(props){
     super(props);
     this.state={
@@ -20,7 +19,10 @@ class App extends Component {
       timer: 0,
       isSession: false,
       setBreak: 5,
-      isBreak: false
+      isBreak: false,
+      playSound: false,
+      startWork: 'http://soundbible.com/mp3/SMALL_CROWD_APPLAUSE-Yannick_Lemieux-1268806408.mp3',
+      startWorkPlaying: true
     }
 
     this.clickIncreaseSession = this.clickIncreaseSession.bind(this);
@@ -35,7 +37,19 @@ class App extends Component {
     this.startBreak = this.startBreak.bind(this)
     this.setStartSession = this.setStartSession.bind(this)
 
+    this.playSound = this.playSound.bind(this)
 
+
+  }
+
+  playSound(){
+    this.setState({
+      playSound: true,
+    })
+    this.audio =  new Audio(this.state.startWork)
+    this.audio.load()
+    this.audio.volume = 0.4
+    this.audio.play()
   }
 
   clickIncreaseSession(){
@@ -66,14 +80,37 @@ class App extends Component {
   startTimer(){
     console.log(this.state.isSession)
     console.log(this.state.isBreak)
+    /*this.setState({
+      startWorkPlaying: true
+    })
+    if(this.state.playSound === true){
+       this.audio.pause()
+    }else if(this.state.startWorkPlaying === true) {
+      this.startWork = new Audio(this.state.startWork)
+      this.startWork.load()
+      this.startWork.volume = 0.4
+      this.startWork.play()
+    }*/
+    this.startWork = new Audio(this.state.startWork)
+    this.startWork.load()
+    this.startWork.volume = 0.4
+    this.startWork.play()
 
     clearInterval(this.intervalId)
     this.setState({
+        playSound: false,
         start: true,
         isBreak: false,
         isSession: true,
         timer: this.state.setSession * 60
     })
+
+    /*if(this.state.playSound && this.state.start === true){
+      let audio =  new Audio(this.state.songAlarm)
+      audio.load()
+      audio.volume = 0.5
+      audio.play()
+    }*/
 
    this.intervalId = setInterval(() => {
      this.evalTime()
@@ -124,6 +161,7 @@ class App extends Component {
 
 
     startBreak(){
+      this.playSound()
       this.setState({
           isBreak: true,
           timer: this.state.setBreak * 60
@@ -183,7 +221,8 @@ class App extends Component {
               running={this.state.running}
               startTimer={this.startTimer}
               pauseTimer = {this.pauseTimer}
-              isBreak={this.state.isBreak}/>
+              isBreak={this.state.isBreak}
+              />
       </div>
     );
   }
