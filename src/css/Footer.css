@@ -3,3 +3,10 @@
   font-size: 18px;
   margin-top: 20px;
 }
+.Footer .fa-twitter{
+  color: #0084b4;
+}
+
+.Footer .fa-github{
+  color: green;
+}
